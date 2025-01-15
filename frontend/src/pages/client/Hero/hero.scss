@@ -1,0 +1,142 @@
+@use '../../../style/mixins' as *;
+
+.hero {
+  &__nav {
+    margin-bottom: 6rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint-down(small) { 
+      margin-bottom: 1rem;
+    }
+
+    > .year {
+      font-weight: 600;
+    }
+  
+    .back-to-top {
+      display: flex;
+      align-items: center;
+  
+      > p {
+        margin-right: .5rem;
+        display: block;
+        
+        @include breakpoint-down(small) { 
+          display: none;
+        }
+      }
+
+      > .icon {
+        color: #e1e1e1;
+        transition: 0.5s all ease-in-out;
+        width: 36px;
+        height: 36px;
+
+        @include breakpoint-down(small) { 
+          width: 26px;
+        height: 26px;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.49);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin: 0 auto;
+    margin-bottom: 6rem;
+
+    @include breakpoint-down(small) {
+      margin-bottom: 2rem;
+    }
+
+    > .subtitle {
+      font-size: 1.5rem;
+      
+      @include breakpoint-down(small) {
+        font-size: .7rem;
+      }
+    }
+
+    > .title {
+      // font-size: 13rem;
+      font-size: 16vw;
+      color: #e1e1e1;
+
+      @include breakpoint-down(small) { 
+        font-size: 29vw;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+    @include breakpoint-down(small) { 
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__connect {
+    display: flex;
+    gap: 1rem;
+    
+    @include breakpoint-down(small) {
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+
+    > .btn {
+      width: 120px;
+      height: 45px;
+      border: 1px solid #000000;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      @include breakpoint-down(small) {
+        width: 100%;
+      }
+
+      > p {
+        font-size: .7rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__creators {
+    text-align: right;
+
+    @include breakpoint-down(small) {
+      width: 100%;
+    }
+
+    @include breakpoint-down(medium) {
+      text-align: left;
+      font-size: .7rem;
+    }
+
+    > .designed-by {
+      white-space: nowrap;
+    }
+    
+    > .developed-by {
+      white-space: nowrap;
+
+    }
+  }
+}
