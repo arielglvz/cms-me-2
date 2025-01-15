@@ -24,6 +24,10 @@ const heroSchema = new mongoose.Schema({
   socials : {
     type: Array,
     required: true
+  },
+  year : {
+    type: Number,
+    required: true
   }
 })
 
