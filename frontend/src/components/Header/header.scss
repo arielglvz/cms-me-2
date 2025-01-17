@@ -1,0 +1,24 @@
+@use '../../style/mixins.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logout {
+    padding: .5rem .2rem ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    // border: 2px solid #000000;
+    cursor: pointer;
+
+    .logout-text {
+
+      @include breakpoint-down(small) { 
+        display: none;
+      }
+    }
+  }
+}

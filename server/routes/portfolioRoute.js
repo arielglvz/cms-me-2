@@ -8,6 +8,7 @@ const {
   Course, 
 } = require("../models/portfolioModel");
 
+// get all portfolioData
 router.get("/get-portfolio-data", async (req, res) => {
   try {
     const heros = await Hero.find();
@@ -31,7 +32,14 @@ router.get("/get-portfolio-data", async (req, res) => {
   }
 });
 
-
-
+// update Hero
+router.put("/update-hero", async (req, res) => {
+  try {
+    const hero = await Hero.findOneAndUpdate();
+  } catch (error) {
+    console.error("Error updating hero:", error);
+     res.status(500).send(error);
+  }
+})
 
 module.exports = router;
