@@ -1,7 +1,7 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './hero.scss'
 
 const Hero = () => {
@@ -13,16 +13,16 @@ if (!portfolioData) {
   return <div>Failed to load hero data. Please try again later.</div>; 
 } 
   const { hero } = portfolioData; 
-  const { _id, welcomeText, caption, firstName, lastName, socials, year } = hero;
-
+  const { _id, welcomeText, caption, firstName, lastName, socials, yearCreated } = hero;
+  
   return (
     <div className='hero container'>
       <nav className='hero__nav'>
-        <p className='year'>&copy; {year}</p>
+        <p className='year'>&copy; {yearCreated}</p>
         <Link to="/admin" style={{ textDecoration: "none", color: "black" }}>
-          <div className="back-to-top">
-            <p className='bold'>EDIT PORTFOLIO</p>
-            <Icon className="icon" icon="mdi:view-dashboard-edit" />
+          <div className="hero__back-to-top">
+            <p>LOGIN</p>
+            <Icon className="hero__icon" icon="mdi:account-box-edit-outline" />
           </div>
         </Link>
       </nav>

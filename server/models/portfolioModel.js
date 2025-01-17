@@ -25,7 +25,7 @@ const heroSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
-  year : {
+  yearCreated : {
     type: Number,
     required: true
   }
